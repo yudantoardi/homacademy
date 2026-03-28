@@ -60,29 +60,7 @@
             display: flex;
             align-items: center;
         }
-        .contact-section h2 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: #1e293b;
-            line-height: 1.2;
-            margin-bottom: 2rem;
-        }
-        .contact-section p {
-            font-size: 1.1rem;
-            color: #475569;
-            max-width: 550px;
-            margin-bottom: 3rem;
-            line-height: 1.6;
-        }
-        .contact-info-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-        .contact-info-icon { color: var(--primary-color); }
-        .contact-info-text h6 { font-size: 1.1rem; font-weight: 700; margin-bottom: 2px; color: #1e293b; }
-        .contact-info-text p { font-size: 0.95rem; color: #64748b; margin-bottom: 0; }
+        
         .contact-section-image-wrapper {
             position: absolute;
             bottom: 0;
@@ -104,11 +82,27 @@
         .contact-section .container { position: relative; z-index: 2; }
 
         @media (max-width: 991px) {
-            .contact-section { padding: 60px 0; min-height: auto; text-align: center; }
-            .contact-section h2 { font-size: 2.5rem; }
-            .contact-section p { margin-left: auto; margin-right: auto; }
-            .contact-info-item { justify-content: center; text-align: left; }
-            .contact-section-image-wrapper { position: relative; width: 100%; height: 350px; margin-top: 50px; }
+            .contact-section { 
+                padding: 60px 0; 
+                min-height: auto; 
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+            }
+            .contact-section .container {
+                order: 2;
+            }
+            .contact-section-image-wrapper { 
+                position: relative; 
+                width: 100%; 
+                height: 350px; 
+                margin-top: 0;
+                bottom: 0;
+                order: 1;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+            }
             .contact-section-image-wrapper img { height: 100%; width: 100%; object-position: bottom center; }
         }
     </style>
@@ -141,20 +135,20 @@
 
     <!-- 1. Hero Section (from homepage) -->
     <section id="hero" class="hero-section">
+        <div class="hero-image-wrapper">
+            <img src="images/hero-1.png" alt="Makeup Model" class="img-fluid">
+        </div>
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 py-5 mb-lg-5">
+                <div class="col-lg-6 py-5 mb-lg-5 text-center text-lg-start mt-4 mt-lg-0">
                     <h1 class="fw-bold mb-4">Upgrade Skill Makeup-mu Bersama HOM Academy</h1>
                     <p class="lead text-muted mb-5">Pelajari teknik makeup melalui kelas video yang mudah dipahami, dan dibimbing langsung oleh makeup artist berpengalaman. Belajar sesuai ritmemu, ulangi kapan saja, dan berkembang tanpa batas.</p>
-                    <div class="d-flex flex-wrap gap-3 mb-5">
+                    <div class="d-flex flex-wrap gap-3 mb-5 justify-content-center justify-content-lg-start">
                         <a href="#" class="btn btn-secondary-custom rounded-pill">HOM Academy</a>
                         <a href="#programs" class="btn btn-primary rounded-pill shadow">Mulai Belajar</a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="hero-image-wrapper">
-            <img src="images/hero-1.png" alt="Makeup Model" class="img-fluid">
         </div>
     </section>
 
@@ -492,50 +486,50 @@
 
     <!-- 8. Contact Us Section (from contact page) -->
     <section id="contact" class="contact-section">
+        <div class="contact-section-image-wrapper">
+            <img src="images/hero-1.png" alt="Makeup Model" class="img-fluid">
+        </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <h2 class="fw-bold">Contact Hom Academy</h2>
-                    <p>Punya pertanyaan tentang program, pendaftaran, atau informasi di website ini? Silakan hubungi kami, tim HOM Academy siap membantu Anda.</p>
+                <div class="col-lg-6 text-center text-lg-start mt-4 mt-lg-0">
+                    <h2 class="fw-bold mb-4">Contact Hom Academy</h2>
+                    <p class="mb-5">Punya pertanyaan tentang program, pendaftaran, atau informasi di website ini? Silakan hubungi kami, tim HOM Academy siap membantu Anda.</p>
                     
                     <div class="row mt-5">
                         <div class="col-md-6">
-                            <div class="contact-info-item">
-                                <div class="contact-info-icon">
+                            <div class="contact-info-item d-flex align-items-center gap-3 mb-4 justify-content-center justify-content-lg-start">
+                                <div class="contact-info-icon text-primary">
                                     <i data-lucide="phone" size="28"></i>
                                 </div>
-                                <div class="contact-info-text">
-                                    <h6>Phone</h6>
-                                    <p>+62 812-9721-1414</p>
+                                <div class="contact-info-text text-start">
+                                    <h6 class="fw-bold mb-1">Phone</h6>
+                                    <p class="text-muted mb-0">+62 812-9721-1414</p>
                                 </div>
                             </div>
-                            <div class="contact-info-item">
-                                <div class="contact-info-icon">
+                            <div class="contact-info-item d-flex align-items-center gap-3 mb-4 justify-content-center justify-content-lg-start">
+                                <div class="contact-info-icon text-primary">
                                     <i data-lucide="map-pin" size="28"></i>
                                 </div>
-                                <div class="contact-info-text">
-                                    <h6>Address</h6>
-                                    <p>Jakarta, Indonesia</p>
+                                <div class="contact-info-text text-start">
+                                    <h6 class="fw-bold mb-1">Address</h6>
+                                    <p class="text-muted mb-0">Jakarta, Indonesia</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="contact-info-item">
-                                <div class="contact-info-icon">
+                            <div class="contact-info-item d-flex align-items-center gap-3 mb-4 justify-content-center justify-content-lg-start">
+                                <div class="contact-info-icon text-primary">
                                     <i data-lucide="mail" size="28"></i>
                                 </div>
-                                <div class="contact-info-text">
-                                    <h6>Email</h6>
-                                    <p>contact@homacademy.id</p>
+                                <div class="contact-info-text text-start">
+                                    <h6 class="fw-bold mb-1">Email</h6>
+                                    <p class="text-muted mb-0">contact@homacademy.id</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="contact-section-image-wrapper">
-            <img src="images/hero-1.png" alt="Makeup Model" class="img-fluid">
         </div>
     </section>
 
