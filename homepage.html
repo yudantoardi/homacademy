@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOM Academy - Upgrade Skill Makeup-mu</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="homepage.html">HOM <span class="text-dark">ACADEMY</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="homepage.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#programs">Program</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Testimoni</a></li>
+                    <li class="nav-item ms-lg-4">
+                        <a href="#" class="btn btn-primary rounded-pill px-4">Masuk</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 py-5 mb-lg-5">
+                    <h1 class="fw-bold mb-4">Upgrade Skill Makeup-mu Bersama HOM Academy</h1>
+                    <p class="lead text-muted mb-5">Pelajari teknik makeup melalui kelas video yang mudah dipahami, dan dibimbing langsung oleh makeup artist berpengalaman. Belajar sesuai ritmemu, ulangi kapan saja, dan berkembang tanpa batas.</p>
+                    <div class="d-flex flex-wrap gap-3 mb-5">
+                        <a href="#" class="btn btn-secondary-custom rounded-pill">HOM Academy</a>
+                        <a href="#programs" class="btn btn-primary rounded-pill shadow">Mulai Belajar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Moved image wrapper outside container for absolute positioning -->
+        <div class="hero-image-wrapper">
+            <img src="images/hero-1.png" alt="Makeup Model" class="img-fluid">
+        </div>
+    </section>
+
+    <!-- Stats Section (Hanging Cards) -->
+    <section class="stats-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-4">
+                            <div class="stat-card">
+                                <div class="icon-circle shadow-sm">
+                                    <i data-lucide="users"></i>
+                                </div>
+                                <h2 class="fw-bold">1K+</h2>
+                                <p>Student Training</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-card">
+                                <div class="icon-circle shadow-sm">
+                                    <i data-lucide="users-2"></i>
+                                </div>
+                                <h2 class="fw-bold">1K+</h2>
+                                <p>Alumni Community</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-card">
+                                <div class="icon-circle shadow-sm">
+                                    <i data-lucide="graduation-cap"></i>
+                                </div>
+                                <h2 class="fw-bold">7+</h2>
+                                <p>MUA Graduated</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section id="programs" class="py-5 bg-white">
+        <div class="container py-lg-5">
+            <div class="row align-items-center g-5">
+                <!-- Left Column: Image with Decoration -->
+                <div class="col-lg-5">
+                    <div class="program-image-wrapper position-relative">
+                        <!-- Makeup Swatch Decoration -->
+                        <div class="makeup-swatch"></div>
+                        <!-- Main Program Image -->
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Self Course Makeup" class="img-fluid rounded-4 position-relative z-2 shadow-sm">
+                    </div>
+                </div>
+                <!-- Right Column: Text and Card -->
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-3 display-6">Program Belajarmu</h2>
+                    <p class="text-muted mb-5 lead-small">HOM Academy menyediakan pilihan program belajar yang bisa kamu sesuaikan dengan kebutuhanmu</p>
+                    
+                    <!-- New Program Card Design -->
+                    <div class="program-card-horizontal p-4 p-md-5">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h4 class="text-white fw-bold mb-3">Self Course: Personal Makeup Program</h4>
+                                <p class="text-white-50 mb-0 small">Program belajar makeup untuk kebutuhan personal dengan materi praktis dan mudah diterapkan</p>
+                            </div>
+                            <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                                <a href="self-program.html" class="btn btn-explore rounded-3 px-4 py-2">Explore Program</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Section -->
+    <section id="event" class="py-5 bg-light-soft">
+        <div class="container py-lg-5">
+            <div class="row align-items-center g-5">
+                <!-- Left Column: Event Content -->
+                <div class="col-lg-7 order-2 order-lg-1">
+                    <h6 class="text-primary fw-bold mb-3">Glow-Up Room Vol.2</h6>
+                    <h2 class="display-4 fw-bold mb-4">Self Korean Makeup Class</h2>
+                    <p class="text-muted mb-4 pe-lg-5">Online makeup class yang membahas teknik Korean self-makeup secara praktis, mulai dari base hingga finishing yang natural dan fresh</p>
+                    
+                    <div class="d-flex flex-wrap gap-4 mb-5 text-muted small">
+                        <div class="d-flex align-items-center gap-2">
+                            <i data-lucide="map-pin" class="text-primary" size="18"></i>
+                            <span>Live via Zoom</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i data-lucide="calendar" class="text-primary" size="18"></i>
+                            <span>14 March 2026</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="fw-bold mb-1">100 +</h3>
+                        <p class="text-muted small">Participant Joined</p>
+                    </div>
+
+                    <a href="#" class="btn btn-primary rounded-pill px-5 py-3 d-inline-flex align-items-center gap-2">
+                        Join Now <i data-lucide="arrow-right" size="20"></i>
+                    </a>
+                </div>
+
+                <!-- Right Column: Event Poster -->
+                <div class="col-lg-5 order-1 order-lg-2">
+                    <div class="event-poster-wrapper">
+                        <!-- Menggunakan placeholder yang merepresentasikan poster di gambar -->
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Glow-Up Room Event" class="img-fluid rounded-5 shadow-lg poster-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-5 bg-primary-subtle">
+        <div class="container py-lg-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Kata HOM Peeps!</h2>
+                <p class="text-muted">Nggak perlu takut gagal walau masih pemula!</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card h-100">
+                        <div class="mb-4 text-warning">
+                            <i data-lucide="star" fill="currentColor"></i>
+                            <i data-lucide="star" fill="currentColor"></i>
+                            <i data-lucide="star" fill="currentColor"></i>
+                            <i data-lucide="star" fill="currentColor"></i>
+                            <i data-lucide="star" fill="currentColor"></i>
+                        </div>
+                        <p class="mb-5 italic">"Sebagai pemula, awalnya aku takut nggak bisa ngikutin. Tapi materi di Homacademy bener-bener step-by-step dan mudah dimengerti bahkan untuk yang nggak punya basic sama sekali!"</p>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top">
+                            <div class="avatar bg-primary text-white d-flex align-items-center justify-content-center">A</div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Amanda</h6>
+                                <p class="small text-muted mb-0">Jakarta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card h-100">
+                        <div class="mb-4 text-warning">
+                            <i data-lucide="star" fill="currentColor"></i>
+                            <i data-lucide="star" fill="currentColor"></i>
+                            <i data-lucide="star" fill="currentColor"></i>
+                            <i data-lucide="star" fill="currentColor"></i>
+                            <i data-lucide="star" fill="currentColor"></i>
+                        </div>
+                        <p class="mb-5">"Suka banget karena videonya bisa diakses kapan saja. Aku yang sibuk kerja tetap bisa belajar makeup pas jam istirahat atau malam hari tanpa perlu datang ke kursus tatap muka."</p>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top">
+                            <div class="avatar bg-success text-white d-flex align-items-center justify-content-center">F</div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Feby</h6>
+                                <p class="small text-muted mb-0">Bandung</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card h-100">
+                        <div class="mb-4 text-warning">
+                            <i data-lucide="star" fill="currentColor"></i>
+                            <i data-lucide="star" fill="currentColor"></i>
+                            <i data-lucide="star" fill="currentColor"></i>
+                            <i data-lucide="star" fill="currentColor"></i>
+                            <i data-lucide="star" fill="currentColor"></i>
+                        </div>
+                        <p class="mb-5">"Kualitas videonya jernih banget, teknik contouring yang tadinya susah jadi kelihatan gampang karena penjelasan mentornya sangat detail. Worth it banget buat yang mau upgrade skill!"</p>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top">
+                            <div class="avatar bg-info text-white d-flex align-items-center justify-content-center">S</div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Siska</h6>
+                                <p class="small text-muted mb-0">Surabaya</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-5 bg-white">
+        <div class="container py-lg-5">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h2 class="fw-bold mb-4">Frequently Asked Questions</h2>
+                    <p class="text-muted">Masih punya pertanyaan seputar HOM Academy? Cek jawabannya di sini.</p>
+                    <a href="#" class="btn btn-outline-primary rounded-pill mt-3">Hubungi Kami</a>
+                </div>
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Bagaimana cara mengakses video pembelajaran?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Hom Peeps harus login dulu untuk bisa mengakses video melalui dashboard member di website kami. Setelah login, semua video yang kamu beli akan tersedia selamanya.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Apa itu HOM Academy?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    HOM Academy adalah platform pembelajaran makeup berbasis video yang dirancang untuk membantu kamu mengembangkan skill secara bertahap dan terarah, dibimbing oleh MUA profesional.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white">
+        <div class="container">
+            <div class="row g-5 pb-5">
+                <div class="col-lg-4">
+                    <h2 class="footer-logo fw-bold">HOM <span class="text-primary">ACADEMY</span></h2>
+                    <p class="text-white-50 mb-4">Platform pembelajaran makeup berbasis video terbaik untuk membantu kamu mengembangkan skill secara bertahap dan terarah.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-primary btn-sm rounded-circle p-2"><i data-lucide="instagram" size="18"></i></a>
+                        <a href="#" class="btn btn-primary btn-sm rounded-circle p-2"><i data-lucide="facebook" size="18"></i></a>
+                        <a href="#" class="btn btn-primary btn-sm rounded-circle p-2"><i data-lucide="youtube" size="18"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <h6 class="fw-bold mb-4">Navigasi</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="homepage.html" class="footer-link">Beranda</a></li>
+                        <li class="mb-3"><a href="#programs" class="footer-link">Program</a></li>
+                        <li class="mb-3"><a href="#testimonials" class="footer-link">Testimoni</a></li>
+                        <li class="mb-3"><a href="#faq" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-4">Kontak</h6>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-3 d-flex align-items-center gap-2">
+                            <i data-lucide="mail" size="16"></i> hello@homacademy.id
+                        </li>
+                        <li class="mb-3 d-flex align-items-center gap-2">
+                            <i data-lucide="map-pin" size="16"></i> Jakarta, Indonesia
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary py-4 text-center text-white-50">
+                <p class="small mb-0">&copy; 2026 HOM Academy. All Rights Reserved. Built with Love.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

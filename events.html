@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - HOM Academy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .events-hero {
+            background-color: var(--hero-bg);
+            padding: 80px 0 100px; /* Added 100px bottom padding for text spacing */
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+
+        .certified-badge {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8px 25px;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .events-hero h1 {
+            font-size: 4rem;
+            color: var(--primary-color);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .events-hero p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--dark-color);
+            max-width: 550px;
+            margin-bottom: 1.5rem;
+        }
+
+        .events-hero .btn-join-class {
+            background-color: var(--secondary-color);
+            color: #fff;
+            border: none;
+            padding: 14px 45px;
+            border-radius: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .events-hero .btn-explore-event {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 14px 45px;
+            border-radius: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .events-hero-image-wrapper {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .events-hero-image-wrapper img {
+            height: 105%;
+            width: auto;
+            object-fit: contain;
+            object-position: bottom right;
+        }
+
+        .events-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .event-card-full {
+            background: #fff;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: none;
+            margin-bottom: 40px;
+        }
+
+        /* New Events Grid Styles */
+        .events-filter-btn {
+            border-radius: 0.5rem;
+            padding: 6px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #dee2e6;
+            background: #fff;
+            color: #6c757d;
+            transition: all 0.2s;
+        }
+
+        .events-filter-btn.active {
+            background-color: #0d6efd;
+            color: #fff;
+            border-color: #0d6efd;
+        }
+
+        .search-input-group {
+            position: relative;
+            max-width: 350px;
+        }
+
+        .search-input-group input {
+            border-radius: 2rem;
+            padding-left: 40px;
+            border: 1px solid #dee2e6;
+        }
+
+        .search-input-group svg {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #adb5bd;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .event-grid-card {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .event-grid-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .event-grid-img-wrapper {
+            padding: 15px;
+        }
+
+        .event-grid-img {
+            width: 100%;
+            border-radius: 0.8rem;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        .event-grid-body {
+            padding: 0 20px 20px;
+        }
+
+        .event-grid-date {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 8px;
+        }
+
+        .event-grid-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 3rem;
+        }
+
+        .event-grid-info {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+
+        .event-grid-footer {
+            border-top: 1px solid #f8f9fa;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .event-grid-price {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .btn-view-details {
+            background-color: #5c67f2;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 0.5rem;
+            border: none;
+        }
+
+        .pagination-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 50px;
+        }
+
+        .page-num {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #0d6efd;
+            color: #0d6efd;
+            border-radius: 0.4rem;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .page-select {
+            border: 1px solid #dee2e6;
+            padding: 5px 10px;
+            border-radius: 0.4rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        /* Responsive */
+        @media (max-width: 991px) {
+            .events-hero {
+                padding: 60px 0;
+                min-height: auto;
+                text-align: center;
+            }
+            .events-hero h1 {
+                font-size: 3rem;
+            }
+            .events-hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .events-hero-image-wrapper {
+                position: relative;
+                width: 100%;
+                height: 400px;
+                margin-top: 30px;
+            }
+            .events-hero-image-wrapper img {
+                height: 100%;
+                width: 100%;
+                object-position: bottom center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="homepage.html">HOM <span class="text-dark">ACADEMY</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="homepage.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#programs">Program</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Testimoni</a></li>
+                    <li class="nav-item ms-lg-4">
+                        <a href="#" class="btn btn-primary rounded-pill px-4">Masuk</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Events Hero -->
+    <section class="events-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <span class="certified-badge">Certified Business Coach</span>
+                    <h1>HOM Academy Event</h1>
+                    <p>HOM Academy memiliki berbagai rangkaian event yang diperuntukkan bagi para beauty enthusiast dan MUA yang ingin meningkatkan skill, memperkuat mindset, dan berkembang di industri makeup.</p>
+                    <p>Join our next event and start your glow up journey today!</p>
+                    <div class="d-flex flex-wrap gap-3 mt-5">
+                        <a href="#" class="btn-join-class">Join Class</a>
+                        <a href="#" class="btn-explore-event">Explore Event</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="events-hero-image-wrapper">
+            <img src="images/hero-1.png" alt="Makeup Model" class="img-fluid">
+        </div>
+    </section>
+
+    <!-- Events List Section -->
+    <section class="py-5 bg-white">
+        <div class="container py-lg-5">
+            <!-- Header & Filter -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-0">All Events</h2>
+                </div>
+                <div class="col-md-6 text-md-end mt-4 mt-md-0">
+                    <div class="search-input-group ms-md-auto">
+                        <i data-lucide="search"></i>
+                        <input type="text" class="form-control" placeholder="Search for events">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Events Grid -->
+            <div class="row g-4">
+                <!-- Event Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="event-grid-card">
+                        <div class="event-grid-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bestie Session" class="event-grid-img">
+                        </div>
+                        <div class="event-grid-body">
+                            <p class="event-grid-date">Monday, March 2, 2026</p>
+                            <h5 class="event-grid-title">BESTIE | BEAUTY SESSION WITH HANUM</h5>
+                            <div class="event-grid-info d-flex align-items-center gap-2">
+                                <i data-lucide="monitor" size="16"></i>
+                                <span>Online</span>
+                            </div>
+                            <div class="event-grid-info d-flex align-items-center gap-2 mb-4">
+                                <i data-lucide="user" size="16"></i>
+                                <span>homacademy website</span>
+                            </div>
+                            <div class="event-grid-footer">
+                                <span class="event-grid-price">Free</span>
+                                <a href="#" class="btn btn-view-details">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="event-grid-card">
+                        <div class="event-grid-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Glow-Up Room" class="event-grid-img">
+                        </div>
+                        <div class="event-grid-body">
+                            <p class="event-grid-date">Saturday, March 14, 2026</p>
+                            <h5 class="event-grid-title">GLOW-UP ROOM VOL.2</h5>
+                            <div class="event-grid-info d-flex align-items-center gap-2">
+                                <i data-lucide="monitor" size="16"></i>
+                                <span>Online</span>
+                            </div>
+                            <div class="event-grid-info d-flex align-items-center gap-2 mb-4">
+                                <i data-lucide="user" size="16"></i>
+                                <span>homacademy website</span>
+                            </div>
+                            <div class="event-grid-footer">
+                                <span class="event-grid-price">Free</span>
+                                <a href="#" class="btn btn-view-details">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-wrapper">
+                <i data-lucide="chevron-left" class="text-muted" size="20"></i>
+                <a href="#" class="page-num">1</a>
+                <i data-lucide="chevron-right" class="text-muted" size="20"></i>
+                <select class="page-select ms-3">
+                    <option>6 / page</option>
+                    <option>12 / page</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white">
+        <div class="container">
+            <div class="row g-5 pb-5">
+                <div class="col-lg-4">
+                    <h2 class="footer-logo fw-bold">HOM <span class="text-primary">ACADEMY</span></h2>
+                    <p class="text-white-50 mb-4">Platform pembelajaran makeup berbasis video terbaik untuk membantu kamu mengembangkan skill secara bertahap dan terarah.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-primary btn-sm rounded-circle p-2"><i data-lucide="instagram" size="18"></i></a>
+                        <a href="#" class="btn btn-primary btn-sm rounded-circle p-2"><i data-lucide="facebook" size="18"></i></a>
+                        <a href="#" class="btn btn-primary btn-sm rounded-circle p-2"><i data-lucide="youtube" size="18"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <h6 class="fw-bold mb-4">Navigasi</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="homepage.html" class="footer-link">Beranda</a></li>
+                        <li class="mb-3"><a href="about.html" class="footer-link">About Us</a></li>
+                        <li class="mb-3"><a href="events.html" class="footer-link">Events</a></li>
+                        <li class="mb-3"><a href="index.html#programs" class="footer-link">Program</a></li>
+                        <li class="mb-3"><a href="index.html#testimonials" class="footer-link">Testimoni</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-4">Kontak</h6>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-3 d-flex align-items-center gap-2">
+                            <i data-lucide="mail" size="16"></i> hello@homacademy.id
+                        </li>
+                        <li class="mb-3 d-flex align-items-center gap-2">
+                            <i data-lucide="map-pin" size="16"></i> Jakarta, Indonesia
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary py-4 text-center text-white-50">
+                <p class="small mb-0">&copy; 2026 HOM Academy. All Rights Reserved. Built with Love.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
